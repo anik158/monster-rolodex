@@ -19,13 +19,23 @@ function App() {
       }))
   }, []);
 
+  const onChangeHandler = (event) => {
+                const searchField = event.target.value.toLowerCase();
+                const newFilteredMonsters = monsters.filter((monster) => {
+                    return monster.name.toLowerCase().includes(searchField)
+                });
+
+                setFilteredMonsters(newFilteredMonsters);
+      }
+
 
   return (
-    <>
-      <Search monsters={monsters} setFilteredMonsters={setFilteredMonsters}></Search>
+    <div className="app-container">
+      <h1 className='app-title'>Monster Rolodex</h1>
+      <Search onChangeHandler={onChangeHandler}></Search>
     
       <CardList monsters={filteredMonsters}></CardList>
-    </>
+    </div>
   )
 }
 
