@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className='app-title'>Monster Rolodex</h1>
+      <h1 className='app-title'>Robot Rolodex</h1>
       <Search onChangeHandler={onChangeHandler}></Search>
     
       <CardList monsters={filteredMonsters}></CardList>
